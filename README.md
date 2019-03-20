@@ -16,3 +16,13 @@ A simple program to generate dice and compare their win/loss to a sample die
   -f (-faces) #faces -- change the number of faces on the die, without -die will default sides to 1 - #faces
   
   -d (-die) {number on each side} -- type in, space seperated, numbers for each die on the die you want to sample against
+  
+### Bugs & To Do:
+
+  Need to update documentation
+  
+  Currently generating up to N numbers that sum to. 
+  Could reduce to generating only up to #faces numbers that sum to N.
+  
+  If you declare the number of faces after the faces of the die, it will
+  removed the users declared face numbers and set the default
