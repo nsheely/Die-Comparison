@@ -19,7 +19,7 @@ A simple program to generate dice and compare their win/loss to a sample die
   
 ### Bugs & To Do:
 
-  Need to update documentation
+  Need to update comments/documentation
   
   Currently generating up to N numbers that sum to. 
   Could reduce to generating only up to #faces numbers that sum to N.
