@@ -9,7 +9,7 @@ A simple program to generate dice and compare their win/loss to a sample die
   
   A die wins when it rolls a higher number, loses when it rolls lower, and ties re-roll.
   
-### Usage: ./die_comp [-pips #pips][-faces *faces][-die {number on each side}]
+### Usage: ./die_comp [-pips #pips][-faces #faces][-die {number on each side}]
 
   -p (-pips) #pips -- change max number of pips on generated die to #pips
   
