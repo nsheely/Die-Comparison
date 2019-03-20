@@ -101,7 +101,7 @@ int main(int argc, char *argv[]) {
 			err_and_quit("Unknown entry\nUsage: ./die_comp [-pips #pips]"
 				"[-faces #faces][-die {number for each die face}]");
 	}
-	find_combs(pip_num, die_faces, die);
+	compare_die(pip_num, die_faces, die);
 	free(die);
 	return EXIT_SUCCESS;
 }
