@@ -1,10 +1,9 @@
 # Die-Comparison
 A simple program to generate dice and compare their win/loss to a sample die
------------------------------------------------------------
+
 Author: Nathan Sheely
 Date: 3/20/2019
 History: version 1.0
------------------------------------------------------------
 
 Summary:
   This program takes a sample die (d6 with sides 1,2,3,4,5,6 by default)
