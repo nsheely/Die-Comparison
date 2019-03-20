@@ -24,5 +24,5 @@ A simple program to generate dice and compare their win/loss to a sample die
   Currently generating up to N numbers that sum to N. 
   Can reduce to generating only up to #faces numbers that sum to N.
   
-  If you declare the number of faces after the faces of the die, it will
+  If you set the number of faces after setting the faces of the die, it will
   removed the users declared face numbers and set the default
