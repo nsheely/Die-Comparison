@@ -1,4 +1,3 @@
-
 /*
  * Project: Die Comparison
  * Author: Nathan Sheely
