@@ -6,8 +6,8 @@
  * Purpose: Parse inputs and run find_comp
  *
  * Contains:
- *  err_and_quit -- Throw stderr and exit program
- *  opcmp -- compare input option to short and long flags
+ *	err_and_quit -- Throw stderr and exit program
+ *	opcmp -- compare input option to short and long options
  *	main -- Parse arguments and find_comp
  */
  
@@ -16,16 +16,38 @@
  #include <unistd.h>
  #include <string.h>
  
- void err_and_quit(char* err_msg){
- 	fprtinf(stderr, err_msg);
+/*
+ * Throws error and exits program
+ *
+ * Arguments:
+ *	char *err: error message
+ */
+void err_and_quit(char* err_msg){
+	fprtinf(stderr, err_msg);
 	exit(EXIT_FAILURE);
- }
- 
- int opcmp(char input[], char s[], char l[]){
- 	return (strcmp(input, s) == 0 || strcmp(input, l) == 0);
- }
- 
- int main(int argc, char *argv[]) {
+}
+
+/*
+ * Checks if input matches either s or l
+ *	*used for options checking, s = short, l = long
+ *
+ * Arguments:
+ *	char input[]: input message to compare
+ *	char s[]: short option
+ *	char l[]: long option
+ *
+ *	Returns:
+ *		1 if match 0 if not
+ */
+int opcmp(char input[], char s[], char l[]){
+	return (strcmp(input, s) == 0 || strcmp(input, l) == 0);
+}
+
+/*
+ * Main function, parse inputs and pass to dice generator
+ *
+ */
+int main(int argc, char *argv[]) {
  	int pip_num = 21; // default 21 pips
 	int die_faces = 6; // default 6 faces
 	char *err_chk; // for error checking string to int conversion
@@ -82,9 +104,4 @@
 	find_combs(pip_num, die_faces, die);
 	free(die);
 	return EXIT_SUCCESS;
- }
- 
- 
- 
- 
- 
+}
