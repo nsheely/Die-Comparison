@@ -15,7 +15,7 @@ A simple program to generate dice and compare their win/loss to a sample die
   
   -f (-faces) #faces -- change the number of faces on the die, without -die will default sides to 1 - #faces
   
-  -d (-die) {number on each side} -- type in, space seperated, numbers for each die on the die you want to sample against
+  -d (-die) {number on each side} -- type in, space seperated, numbers for each face on the die you want to sample against
   
 ### Bugs & To Do:
 
