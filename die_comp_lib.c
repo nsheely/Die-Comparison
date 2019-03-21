@@ -7,7 +7,7 @@
  *
  * Contains:
  *	check_die -- Check generated die against sample die, print results
- *	find_comb_util -- Recursive, generate all combinations of numbers that add to #pips
+ *	gen_dice -- Recursive, generate all combinations of numbers that add to #pips
  *	compare_die -- set variables, call find_comb_util
  */
 
@@ -57,10 +57,10 @@ void check_die(int arr[], int index) {
  *	int num: target number, number of pips
  *	int reducednum: num - total of numbers in arr
  */
-void find_comb_util(int arr[], int index, int num, int reducednum) {
+void gen_dice(int arr[], int index, int num, int reducednum, int dig) {
 	if (reducednum < 0)
 		return;
-	if (reducednum == 0) {
+	if (reducednum == 0 || dig = comp_die_faces) {
 		check_die(arr, index);
 		return;
 	}
@@ -84,7 +84,7 @@ void compare_die(int n, int die_faces, int die[]) {
 	int arr[n];
 	comp_die = die;
 	comp_die_faces = die_faces;
-	find_comb_util(arr, 0, n, n);
+	find_comb_util(arr, 0, n, n, 0);
 	printf("comp die:");
 	int i;
 	for (i = 0; i < die_faces; i++)
