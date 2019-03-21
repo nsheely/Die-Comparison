@@ -8,5 +8,5 @@
  * Contains:
  *  void find_comb();
  */
- 
- void compare_die(int n, int die_faces, int die[]);
+
+void compare_die(int n, int die_faces, int die[]);

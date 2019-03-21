@@ -10,13 +10,13 @@
  *	find_comb_util -- Recursive, generate all combinations of numbers that add to #pips
  *	compare_die -- set variables, call find_comb_util
  */
- 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 static float curr_best = 0.1; // dont show 0 win die
-static comp_die_faces = 6;
+static int comp_die_faces = 6;
 static int *comp_die;
 
 /*
@@ -31,15 +31,15 @@ void check_die(int arr[], int index) {
 	int num_loss = 0;
 	int temp, i, j;
 	for (i = 0; i < comp_die_faces; i++) {
-		temp = i < index ? arr[i], 0;
+		temp = (i < index) ? arr[i] : 0;
 		for (j = 0; j < comp_die_faces; j++) {
-			if(temp < comp_die[i])
+			if (temp < comp_die[j])
 				num_loss++;
-			if(temp > comp_die[i])
+			if (temp > comp_die[j])
 				num_wins++;
 		}
 	}
-	float wlrate = (float) num_wins/num_loss;
+	float wlrate = (float)num_wins / num_loss;
 	if (wlrate >= curr_best) {
 		for (i = 0; i < comp_die_faces; i++)
 			printf("%d ", (i < index ? arr[i] : 0));
@@ -68,7 +68,7 @@ void find_comb_util(int arr[], int index, int num, int reducednum) {
 	int k;
 	for (k = prev; k <= num; k++) {
 		arr[index] = k;
-		find_comb_util(arr, index+1, num, reducednum - k);
+		find_comb_util(arr, index + 1, num, reducednum - k);
 	}
 }
 
@@ -80,12 +80,12 @@ void find_comb_util(int arr[], int index, int num, int reducednum) {
  *	int die_faces: number of die faces
  *	int die[]: numbers on each side of sample die
  */
-void compare_die(int n, int die_faces, int die[]){
+void compare_die(int n, int die_faces, int die[]) {
 	int arr[n];
 	comp_die = die;
 	comp_die_faces = die_faces;
 	find_comb_util(arr, 0, n, n);
-	printf("comp die: ");
+	printf("comp die:");
 	int i;
 	for (i = 0; i < die_faces; i++)
 		printf(" %d", die[i]);
