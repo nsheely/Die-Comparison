@@ -68,7 +68,7 @@ void gen_dice(int arr[], int index, int num, int reducednum, int dig) {
 	int k;
 	for (k = prev; k <= num; k++) {
 		arr[index] = k;
-		find_comb_util(arr, index + 1, num, reducednum - k);
+		gen_dice(arr, index + 1, num, reducednum - k);
 	}
 }
 
@@ -84,7 +84,7 @@ void compare_die(int n, int die_faces, int die[]) {
 	int arr[n];
 	comp_die = die;
 	comp_die_faces = die_faces;
-	find_comb_util(arr, 0, n, n, 0);
+	gen_dice(arr, 0, n, n, 0);
 	printf("comp die:");
 	int i;
 	for (i = 0; i < die_faces; i++)
